@@ -54,5 +54,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  root 'login#welcome'
+  root 'application#hello'
 end
