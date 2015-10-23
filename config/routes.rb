@@ -58,4 +58,5 @@ Rails.application.routes.draw do
   #   end
 
   root 'login#welcome'
+  get 'cool' => 'application#hello'
 end
