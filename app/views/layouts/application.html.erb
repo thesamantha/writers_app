@@ -1,14 +1,15 @@
+<!--so essentially every page follows this layout; has the !DOCTYPE header, has the html tags and head section, which provides for a CSS stylesheet as well as JavaScript, and has a body section, which takes whatever is specifed in the view for an HTML page's body -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WritersApp</title>
+  <title><%= yield(:title) %> | Writer's App</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<%= yield %>  <!-- this guy just grabs whatever's in the view and renders it as HTML for the view's body -->
 
 </body>
 </html>
