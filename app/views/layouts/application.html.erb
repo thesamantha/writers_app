@@ -2,7 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:title) %> | Writer's App</title>
+  <style>
+    body {background-color:teal}
+  </style>  
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
