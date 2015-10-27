@@ -3,9 +3,6 @@ class LoginController < ApplicationController
   def welcome
   end
 
-  def register
-  end
-
   def home
   end
 
@@ -13,6 +10,9 @@ class LoginController < ApplicationController
   end
 
   def about
+  end
+
+  def contact
   end
 
 end

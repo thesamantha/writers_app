@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'login/welcome'
-  get 'login/register'
-  get 'login/help'
-  get 'login/home'
-  get 'login/about'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -63,4 +58,10 @@ Rails.application.routes.draw do
 
   root 'login#welcome'
   get 'cool' => 'application#hello'
+  get 'home'=> 'login#home'
+  get 'help' => 'login#help'
+  get 'contact' => 'login#contact'
+  get 'about' => 'login#about'
+  get 'signup' => 'users#new'
+
 end

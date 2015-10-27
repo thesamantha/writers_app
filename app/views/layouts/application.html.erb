@@ -1,18 +1,18 @@
-<!--so essentially every page follows this layout; has the !DOCTYPE header, has the html tags and head section, which provides for a CSS stylesheet as well as JavaScript, and has a body section, which takes whatever is specifed in the view for an HTML page's body -->
+<!--Note to self: essentially every page follows this layout; has the !DOCTYPE header, has the html tags and head section, which provides for a CSS stylesheet as well as JavaScript, and has a body section, which takes whatever is specified in the view for an HTML page's body -->
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
-    body {background-color:teal}
-  </style>  
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>  <!-- this guy just grabs whatever's in the view and renders it as HTML for the view's body -->
-
-</body>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %> <!-- protects against malicious web attacks -->   
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
+    <%= render 'layouts/header'%>
+    <div class="container">
+      <%= yield %>  <!-- this guy just grabs whatever's in the view and renders it as HTML for the view's body -->
+      <%= render 'layouts/footer'%>
+    </div>
+  </body>
 </html>
